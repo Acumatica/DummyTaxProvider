@@ -1,10 +1,13 @@
-﻿using System;
+﻿
+using PX.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace PX.TaxProvider.DummyTaxProvider
 {
@@ -12,17 +15,22 @@ namespace PX.TaxProvider.DummyTaxProvider
 	{
 		public const string TaxProviderID = "DummyTaxProvider";
 		private const string ActiveSettingID = "Active";
+		private const string WriteTraceSettingID = "WriteTrace";
 		private const decimal TaxPercentage = 0.1m;
 		public ITaxProviderSetting[] DefaultSettings
 		{
 			get
 			{
-				return new ITaxProviderSetting[1]
-					{   new TaxProviderSetting(TaxProviderID, ActiveSettingID,  1, Messages.ActiveSettingDisplaytName,(true).ToString(), TaxProviderSettingControlType.Checkbox)   };
+				return new ITaxProviderSetting[]
+					{   
+						new TaxProviderSetting(TaxProviderID, ActiveSettingID,  1, Messages.ActiveSettingDisplaytName,(true).ToString(), TaxProviderSettingControlType.Checkbox),
+						new TaxProviderSetting(TaxProviderID, WriteTraceSettingID,  2, Messages.ActiveSettingDisplaytName,(true).ToString(), TaxProviderSettingControlType.Checkbox)
+					};
 			}
 		}
 
 		protected bool IsActive { get; set; }
+		protected bool WriteTrace { get; set; }
 
 		public void Initialize(IEnumerable<ITaxProviderSetting> settings)
 		{
@@ -31,6 +39,10 @@ namespace PX.TaxProvider.DummyTaxProvider
 				if (ActiveSettingID.Equals(setting.SettingID, StringComparison.InvariantCultureIgnoreCase))
 				{
 					IsActive = Convert.ToBoolean(setting.Value);
+				}
+				if (WriteTraceSettingID.Equals(setting.SettingID, StringComparison.InvariantCultureIgnoreCase))
+				{
+					WriteTrace = Convert.ToBoolean(setting.Value);
 				}
 			}
 		}
@@ -53,6 +65,10 @@ namespace PX.TaxProvider.DummyTaxProvider
 			}
 			else
 			{
+				if (WriteTrace)
+				{
+					PXTrace.WriteInformation("Ping Request");
+				}
 				return new PingResult()
 				{
 					IsSuccess = true,
@@ -74,6 +90,10 @@ namespace PX.TaxProvider.DummyTaxProvider
 			}
 			else
 			{
+				if (WriteTrace)
+				{
+					PXTrace.WriteInformation("GetTax Request: "+ JsonConvert.SerializeObject(request));
+				}
 				decimal amount = request.CartItems.Sum(_ => _.Amount);
 				decimal taxAmount = amount * TaxPercentage;
 				return new GetTaxResult()
@@ -100,6 +120,10 @@ namespace PX.TaxProvider.DummyTaxProvider
 			}
 			else
 			{
+				if (WriteTrace)
+				{
+					PXTrace.WriteInformation("GetTax Request: " + JsonConvert.SerializeObject(request));
+				}
 				return new PostTaxResult()
 				{
 					IsSuccess = true,
@@ -120,6 +144,10 @@ namespace PX.TaxProvider.DummyTaxProvider
 			}
 			else
 			{
+				if (WriteTrace)
+				{
+					PXTrace.WriteInformation("GetTax Request: " + JsonConvert.SerializeObject(request));
+				}
 				return new CommitTaxResult()
 				{
 					IsSuccess = true,
@@ -140,6 +168,10 @@ namespace PX.TaxProvider.DummyTaxProvider
 			}
 			else
 			{
+				if (WriteTrace)
+				{
+					PXTrace.WriteInformation("GetTax Request: " + JsonConvert.SerializeObject(request));
+				}
 				return new VoidTaxResult()
 				{
 					IsSuccess = true,
