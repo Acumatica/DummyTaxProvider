@@ -96,12 +96,20 @@ namespace PX.TaxProvider.DummyTaxProvider
 				}
 				decimal amount = request.CartItems.Sum(_ => _.Amount);
 				decimal taxAmount = amount * TaxPercentage;
+				string taxName = request.DestinationAddress.Region + "DummyTax";
 				return new GetTaxResult()
 				{
 					IsSuccess = true,
 					Messages = new string[0],
 					TaxLines = new TaxLine[] { new TaxLine() { Index = 1, Rate = TaxPercentage, TaxableAmount = amount, TaxAmount = taxAmount } },
-					TaxSummary = new TaxDetail[] { new TaxDetail() { Rate = TaxPercentage, TaxableAmount = amount, TaxAmount = taxAmount, JurisCode = "DummyTax", JurisName = "DummyTax", TaxName = "DummyTax" } },
+					TaxSummary = new TaxDetail[] 
+					{ 
+						new TaxDetail() 
+						{ 
+							Rate = TaxPercentage, TaxableAmount = amount, TaxAmount = taxAmount, 
+							JurisCode = taxName, JurisName = taxName, TaxName = taxName
+						} 
+					},
 					TotalAmount = amount + taxAmount,
 					TotalTaxAmount = taxAmount
 				};
