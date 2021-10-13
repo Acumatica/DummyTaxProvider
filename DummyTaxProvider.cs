@@ -1,13 +1,9 @@
-﻿
-using PX.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
+
 using Newtonsoft.Json;
+using PX.Data;
 
 namespace PX.TaxProvider.DummyTaxProvider
 {
