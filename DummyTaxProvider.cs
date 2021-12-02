@@ -88,7 +88,7 @@ namespace PX.TaxProvider.DummyTaxProvider
 			{
 				if (WriteTrace)
 				{
-					PXTrace.WriteInformation("GetTax Request: "+ JsonConvert.SerializeObject(request));
+					PXTrace.WriteInformation("GetTax Request: "+ JsonConvert.SerializeObject(request, Formatting.Indented));
 				}
 				decimal amount = request.CartItems.Sum(_ => _.Amount);
 				decimal taxAmount = amount * TaxPercentage;
@@ -126,7 +126,7 @@ namespace PX.TaxProvider.DummyTaxProvider
 			{
 				if (WriteTrace)
 				{
-					PXTrace.WriteInformation("GetTax Request: " + JsonConvert.SerializeObject(request));
+					PXTrace.WriteInformation("PostTax Request: " + JsonConvert.SerializeObject(request, Formatting.Indented));
 				}
 				return new PostTaxResult()
 				{
@@ -150,7 +150,7 @@ namespace PX.TaxProvider.DummyTaxProvider
 			{
 				if (WriteTrace)
 				{
-					PXTrace.WriteInformation("GetTax Request: " + JsonConvert.SerializeObject(request));
+					PXTrace.WriteInformation("CommitTax Request: " + JsonConvert.SerializeObject(request, Formatting.Indented));
 				}
 				return new CommitTaxResult()
 				{
@@ -174,7 +174,7 @@ namespace PX.TaxProvider.DummyTaxProvider
 			{
 				if (WriteTrace)
 				{
-					PXTrace.WriteInformation("GetTax Request: " + JsonConvert.SerializeObject(request));
+					PXTrace.WriteInformation("VoidTax Request: " + JsonConvert.SerializeObject(request, Formatting.Indented));
 				}
 				return new VoidTaxResult()
 				{
