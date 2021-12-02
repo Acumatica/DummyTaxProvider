@@ -37,18 +37,23 @@
     </Reference>
     <Reference Include="PX.Common">
       <HintPath>..\..\Acumatica Sites\21r108\Bin\PX.Common.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PX.Common.Std">
       <HintPath>..\..\Acumatica Sites\21r108\Bin\PX.Common.Std.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PX.Data">
       <HintPath>..\..\Acumatica Sites\21r108\Bin\PX.Data.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PX.Objects">
       <HintPath>..\..\Acumatica Sites\21r108\Bin\PX.Objects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PX.TaxProvider">
       <HintPath>..\..\Acumatica Sites\21r108\Bin\PX.TaxProvider.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
