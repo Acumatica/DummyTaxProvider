@@ -19,8 +19,8 @@ namespace PX.TaxProvider.DummyTaxProvider
 			{
 				return new ITaxProviderSetting[]
 					{   
-						new TaxProviderSetting(TaxProviderID, ActiveSettingID,  1, Messages.ActiveSettingDisplaytName,(true).ToString(), TaxProviderSettingControlType.Checkbox),
-						new TaxProviderSetting(TaxProviderID, WriteTraceSettingID,  2, Messages.ActiveSettingDisplaytName,(true).ToString(), TaxProviderSettingControlType.Checkbox)
+						new TaxProviderSetting(TaxProviderID, ActiveSettingID,  1, Messages.ActiveSettingDisplayName,(true).ToString(), TaxProviderSettingControlType.Checkbox),
+						new TaxProviderSetting(TaxProviderID, WriteTraceSettingID,  2, Messages.WriteTraceDisplayName,(true).ToString(), TaxProviderSettingControlType.Checkbox)
 					};
 			}
 		}

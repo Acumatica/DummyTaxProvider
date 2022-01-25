@@ -7,7 +7,7 @@ namespace PX.TaxProvider.DummyTaxProvider
 	{
 		public const string ConnectionSuccessfull = "Connection successfull";
 		public const string ServiceIsNotActive = "Service is not active";
-		public const string ActiveSettingDisplaytName = "Active";
+		public const string ActiveSettingDisplayName = "Active";
 		public const string WriteTraceDisplayName = "Write Trace";
 	}
 }
