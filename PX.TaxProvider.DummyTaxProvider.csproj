@@ -9,7 +9,7 @@
     <PackageProjectUrl>https://github.com/Acumatica/DummyTaxProvider</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Acumatica/DummyTaxProvider</RepositoryUrl>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>.\CustomizationPackage\Bin</OutputPath>
+    <OutputPath>CustomizationPackage\Bin</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
