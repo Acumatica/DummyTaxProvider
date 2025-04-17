@@ -97,7 +97,24 @@ namespace PX.TaxProvider.DummyTaxProvider
 				{
 					IsSuccess = true,
 					Messages = new string[0],
-					TaxLines = new TaxLine[] { new TaxLine() { Index = 1, Rate = TaxPercentage, TaxableAmount = amount, TaxAmount = taxAmount } },
+					TaxLines = new TaxLine[] 
+					{ 
+						new TaxLine() 
+						{ 
+							Index = 1, 
+							Rate = TaxPercentage, 
+							TaxableAmount = amount, 
+							TaxAmount = taxAmount, 
+							TaxDetails = new TaxDetail[]
+                            {
+                                new TaxDetail()
+                                {
+                                    Rate = TaxPercentage, TaxableAmount = amount, TaxAmount = taxAmount,
+                                    JurisCode = taxName, JurisName = taxName, TaxName = taxName
+                                }
+                            },
+                        } 
+					},
 					TaxSummary = new TaxDetail[] 
 					{ 
 						new TaxDetail() 
