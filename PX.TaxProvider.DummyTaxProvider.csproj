@@ -14,27 +14,23 @@
 
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\Acumatica Sites\25r100\Bin\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\Acumatica Sites\25r193\Bin\Newtonsoft.Json.dll</HintPath>
 	  <Private>false</Private>
     </Reference>
     <Reference Include="PX.Common">
-      <HintPath>..\..\Acumatica Sites\25r100\Bin\PX.Common.dll</HintPath>
+      <HintPath>..\..\Acumatica Sites\25r193\Bin\PX.Common.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="PX.Common.Std">
-      <HintPath>..\..\Acumatica Sites\25r100\Bin\PX.Common.Std.dll</HintPath>
+      <HintPath>..\..\Acumatica Sites\25r193\Bin\PX.Common.Std.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="PX.Data">
-      <HintPath>..\..\Acumatica Sites\25r100\Bin\PX.Data.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="PX.Objects">
-      <HintPath>..\..\Acumatica Sites\25r100\Bin\PX.Objects.dll</HintPath>
+      <HintPath>..\..\Acumatica Sites\25r193\Bin\PX.Data.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="PX.TaxProvider">
-      <HintPath>..\..\Acumatica Sites\25r100\Bin\PX.TaxProvider.dll</HintPath>
+      <HintPath>..\..\Acumatica Sites\25r193\Bin\PX.TaxProvider.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="System" />
